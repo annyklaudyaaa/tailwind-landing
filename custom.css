@@ -1,0 +1,355 @@
+/* ---------- Variables ---------- */
+:root {
+  --primary: #5ec576; /* soft mint */
+  --secondary: #a8dadc; /* soft pastel blue */
+  --accent: #ffb6b9; /* peach pastel */
+  --muted: #6c757d; /* abu soft */
+  --bg: #fefcfb; /* putih hangat */
+  --gutter: 1.5rem;
+  --radius: 14px;
+  --max-width: 1100px;
+}
+
+/* ---------- Global reset ---------- */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: #333;
+  background: var(--bg);
+  line-height: 1.6;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- UTILITIES ---------- */
+.section {
+  padding: 5rem var(--gutter);
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Pastel backgrounds */
+.pastel-pink {
+  background: #fdf0f2;
+}
+.pastel-mint {
+  background: #eafcf3;
+}
+.pastel-blue {
+  background: #e7f4f8;
+}
+.pastel-peach {
+  background: #fff4f2;
+}
+
+/* ---------- HERO ---------- */
+.landing-hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+.landing-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+.landing-hero .container {
+  position: relative;
+  z-index: 2;
+}
+.landing-hero .profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 1rem;
+}
+.glow {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+  animation: pulse 3s infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+  }
+}
+.hero-title {
+  font-size: 2.4rem;
+}
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+.desc {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #111;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+.btn-whatsapp:hover {
+  background: #20b358;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+.hover-card {
+  text-align: center;
+}
+
+/* ---------- ABOUT ---------- */
+.about-box {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.about-box .profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.about-box ul {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.about-box li {
+  margin-bottom: 0.3rem;
+}
+.extra-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.mini-card {
+  background: rgba(255, 182, 185, 0.15);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- PORTFOLIO ---------- */
+.portfolio .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.project:hover {
+  transform: translateY(-6px);
+}
+
+.project img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.project:hover img {
+  transform: scale(1.05);
+}
+
+.project-body {
+  padding: 1rem 1.2rem;
+  flex-grow: 1;
+}
+.project-body h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+.project-body p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.tech-badges {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.badge {
+  background: var(--secondary);
+  color: #111;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+}
+
+.project-footer {
+  padding: 0.8rem 1.2rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+.project-footer a {
+  background: var(--accent);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  color: #111;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.project-footer a:hover {
+  background: #ff9ea3;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.review {
+  background: #fff;
+  border-left: 5px solid var(--primary);
+}
+.review p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- CONTACT ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+.footer .social-icons {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.footer a {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- REVEAL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
